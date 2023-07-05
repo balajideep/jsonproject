@@ -1,0 +1,63 @@
+.container{
+    background-color: gray;
+    height: 1700px;
+}
+h1{
+    text-align: center;
+}
+.ready{
+  
+    width: 100%;
+    height: 1200px;
+}
+.read{
+    margin: 0 auto;
+}
+
+.read td{
+    border: 30px solid white;
+}
+
+/* .red{
+    height: 30px;
+    width: 200px;
+    /* after print the value  one box of table height,width is too large so avoid the height,
+    width so using call the class  red to one td  and reduce the value */
+
+ */
+ tr{
+    width: 100px;
+    background-color: bisque;
+    height: 100px;
+ }
+.green{
+    margin-top: 30px;
+    text-align: center;
+}
+.red{
+    width: 200px;
+    height: 250px;
+    background-color: lightseagreen;
+}
+.red1{
+    width: 200px;
+    height: 250px;
+    background-color: lightseagreen;
+}
+.red2{
+    width: 200px;
+    height: 250px;
+    background-color: lightseagreen;
+}
+.it{
+    position: absolute;
+    height: 300px;
+    width: 35%;
+    background-color: bisque;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.check5{
+    float: right;
+}

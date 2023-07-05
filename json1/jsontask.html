@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./jsontask.css">
+</head>
+
+<body>
+    <div class="container text-center ">
+        <h1>JSON TASK</h1>
+       
+        <div class="green">
+        <label for="search box">search box</label>
+        <input type="text" id="dem">
+        <button type="button" id="submit" onclick="validate()">search</button>
+        <p id="error"></p>
+      </div>
+
+        <div class="ready">
+        <table class="read">
+            
+        <tr>
+            
+            <td class="red"> <p id="demo"></p>
+                </td>
+            <td class="red1"> 
+                <p id="demo1"></p></td>
+            <td class="red2">
+                <p id="demo2"></p></td>
+            <th></th>
+        
+         </tr>
+         
+        <tr>  
+            <td class="red">
+                <p id="demo3"></p></td>
+            <td class="red1">
+                <p id="demo4"></p></td>
+            <td class="red2">
+                <p id="demo5"></p></td>
+            
+          </tr>
+         
+        <tr>
+            <td class="red">
+                <p id="demo6"></p></td>
+            <td class="red1">
+                <p id="demo7"></p></td>
+            <td class="red2">
+                <p id="demo8"></p></td>
+        </tr>
+        <div class="check4">
+        <tr> 
+            <td class="red">
+                <p id="demo9"></p></td>
+            <td class="red1">
+                <p id="demo10"></p></td>
+            <td class="red2">
+                <p id="demo11"></p></td>
+          </tr> </div>
+            
+        </table>
+    </div> <br>
+          
+             <div class="it"><br>
+                <label for="name">name</label>
+                <input type="text" id="card" placeholder="enter your name"> <br><br>
+                <label for="empno">emp no</label>
+                <input type="text" id="card1" placeholder="enter your empno"> <br><br>
+                <label for="age">age</label>
+                <input type="text" id="card2" placeholder="enter your age"> <br><br>
+                <label for="city">city</label>
+                <input type="text" id="card3" placeholder="enter your city"><br><br>
+               <button type="button" id="white" onclick="validate3()">submit</button>
+              </div>
+              
+                <!-- <button onclick="add_a_row()">add rows</button>
+                <button onclick="add_a_col()">add column</button> -->
+
+               
+   
+       
+    
+       
+    <script>
+
+        // (these are display the value in table)
+
+        let name='{"name":"BALAJI","empno":"ROLL NO:663353","age":"AGE:27","city":"CITY:chennai"}'
+
+        obj=JSON.parse(name)
+        // string convert to object so using json.parse
+        text=""
+        for(let x in obj){
+            text+=obj[x]+"<br>"
+        }
+
+        // x is a variable of name,empno,age,city,,obj[x] is obj[x variable value of balaji,27,663353]
+        document.getElementById("demo").innerHTML=text;
+        // document.getElementById("demo").innerHTML=obj.name+""+obj.empno+""+obj.age+""+obj.city;
+        // (this is another method of display all value 0f name)
+
+       
+        let name1='{"name":"BALAKRISHNAN","empno":"ROLL NO:656553","age":"AGE:27","city":"CITY:chennai"}'
+        let name2='{"name":" DEEPAN","empno":"ROLL NO:663453","age":"age:25","city":"city:erode"}'
+        let name3='{"name":"RAJ","empno":"ROLL NO:663563","age":"age:26","city":"city:chennai"}'
+        let name4='{"name":"RAM","empno":"ROLL NO:623353","age":"age:25","city":"city:covai"}'
+        let name5='{"name":"RAMESH","empno":"ROLL NO:625553","age":"age:26","city":"city:chennai"}'
+        let name6='{"name":"MUKESH","empno":"ROLL NO:665653","age":"age:26","city":"city:trichy"}'
+        let name7='{"name":"SURESH","empno":"emp no:664553","age":"age:28","city":"city:chennai"}'
+        let name8='{"name":"SIVA","empno":"emp no:664553","age":"age:25","city":"city:salem"}'
+        let name9='{"name":"CHANDRU","empno":"emp no:663453","age":"age:28","city":"city:gopi"}'
+        let name10='{"name":"SIVAN","empno":"emp no:664763","age":"age:26","city":"city:namakkal"}'
+        let name11='{"name":"VICKY","empno":"emp no:625663","age":"age:27","city":"city:chennai"}'
+
+        obj1=JSON.parse(name1)
+        obj2=JSON.parse(name2)
+        obj3=JSON.parse(name3)
+        obj4=JSON.parse(name4)
+        obj5=JSON.parse(name5)
+        obj6=JSON.parse(name6)
+        obj7=JSON.parse(name7)
+        obj8=JSON.parse(name8)
+        obj9=JSON.parse(name9)
+        obj10=JSON.parse(name10)
+        obj11=JSON.parse(name11)
+
+        text1=""
+        for(let x in obj1){
+            text1+=obj1[x]+"<br>"
+        }
+        text2=""
+        for(let x in obj2){
+            text2+=obj2[x]+"<br>"
+        }
+        text3=""
+        for(let x in obj3){
+            text3+=obj3[x]+"<br>"
+        }
+        text4=""
+        for(let x in obj4){
+            text4+=obj4[x]+"<br>"
+        }
+        text5=""
+        for(let x in obj5){
+            text5+=obj5[x]+"<br>"
+        }
+        text6=""
+        for(let x in obj6){
+            text6+=obj6[x]+"<br>"
+        }
+        text7=""
+        for(let x in obj7){
+            text7+=obj7[x]+"<br>"
+        }
+        text8=""
+        for(let x in obj8){
+            text8+=obj8[x]+"<br>"
+        }
+        text9=""
+        for(let x in obj9){
+            text9+=obj9[x]+"<br>"
+        }
+        text10=""
+        for(let x in obj10){
+            text10+=obj10[x]+"<br>"
+        }
+        text11=""
+        for(let x in obj11){
+            text11+=obj11[x]+"<br>"
+        }
+
+        document.getElementById("demo1").innerHTML=text1;
+        document.getElementById("demo2").innerHTML=text2;
+        document.getElementById("demo3").innerHTML=text3;
+        document.getElementById("demo4").innerHTML=text4;
+        document.getElementById("demo5").innerHTML=text5;
+        document.getElementById("demo6").innerHTML=text6;
+        document.getElementById("demo7").innerHTML=text7;
+        document.getElementById("demo8").innerHTML=text8;
+        document.getElementById("demo9").innerHTML=text9;
+        document.getElementById("demo10").innerHTML=text10;
+        document.getElementById("demo11").innerHTML=text11;
+
+    //   ( search the value in search box)
+       
+         function validate(){
+             let x=document.getElementById("dem").value;
+            
+            let yellow=obj.name;
+           // if we search name or one value in one set of value ,then
+          // 0ne set of value display  
+          
+          let  yellow1=obj1.name;
+          let  yellow2=obj2.name;
+          let  yellow3=obj3.name;
+          let  yellow4=obj4.name;
+          let  yellow5=obj5.name;
+          let  yellow6=obj6.name;
+          let  yellow7=obj7.name;  
+          let  yellow8=obj8.name;
+          let  yellow9=obj9.name;
+          let  yellow10=obj10.name;  
+          let  yellow11=obj11.name;
+
+        //   space is must given to split bcse split the value
+        // x valu first bsce incase typing with or with out space and capital letters and display the
+        // search value is given table value  
+             let  x1=x.split(" ").join("").toLowerCase()
+          
+          
+          let gen=yellow.split(" ").join("").toLowerCase()
+          let gen1=yellow1.split(" ").join("").toLowerCase()
+          let gen2=yellow2.split(" ").join("").toLowerCase()
+          let gen3=yellow3.split(" ").join("").toLowerCase()
+          let gen4=yellow4.split(" ").join("").toLowerCase()
+          let gen5=yellow5.split(" ").join("").toLowerCase()
+          let gen6=yellow6.split(" ").join("").toLowerCase()
+          let gen7=yellow7.split(" ").join("").toLowerCase()
+          let gen8=yellow8.split(" ").join("").toLowerCase()
+
+          let gen9=yellow9.split(" ").join("").toLowerCase()
+          let gen10=yellow10.split(" ").join("").toLowerCase()
+          let gen11=yellow11.split(" ").join("").toLowerCase()
+
+        
+
+            if(x1===gen){
+                    document.getElementById("error").innerHTML=text;
+            }
+             else if(x1===gen1){
+                  document.getElementById("error").innerHTML=text1
+                 }
+            else if(x1===gen2){
+                 document.getElementById("error").innerHTML=text2
+                }
+            else if(x1===gen3){
+                 document.getElementById("error").innerHTML=text3
+                }
+            else if(x1===gen4){
+                 document.getElementById("error").innerHTML=text4
+                }
+            else if(x1===gen5){
+                 document.getElementById("error").innerHTML=text5
+                }
+            else if(x1===gen6){
+                 document.getElementById("error").innerHTML=text6
+                }
+            else if(x1===gen7){
+                 document.getElementById("error").innerHTML=text7
+                }
+            else if(x1===gen8){
+                 document.getElementById("error").innerHTML=text8
+                }
+           
+            else if(x1===gen9){
+                 document.getElementById("error").innerHTML=text9
+                }
+            else if(x1===gen10){
+                 document.getElementById("error").innerHTML=text10
+                }
+            else if(x1===gen11){
+                 document.getElementById("error").innerHTML=text11
+                }
+            else{
+                document.getElementById("error").innerHTML="please enter value"
+            }
+          
+             
+         }
+        
+
+       
+        //    ( add  the new box and display the value in that new box in table )
+    //    function validate1(){
+        // get the value
+      
+        // // function add_a_row()
+        // append column to the HTML table
+// function appendColumn() {
+//     var table1 = document.getElementById('green'), // table reference
+//         i;
+//     // open loop for each row and append cell
+//     for (i = 0; i < table1.rows.length; i++) {
+//         createCell(table1.rows[i].insertCell(table1.rows[i].cells.length), i, 'col');
+//     }
+// }
+//     {    
+//         var table = document.getElementById("myTable");
+//         var tr = document.createElement("tr");
+        
+//         var td = document.createElement("td");
+
+//         td.innerText = "im a <td>";
+       
+       
+//         tr.appendChild(td);
+//         table.appendChild(tr);    
+//     }
+
+
+//  function add_a_row()
+//     {    
+//         var table = document.getElementById("myTable");
+//         var tr = document.createElement("tr");
+       
+//         var td = document.createElement("td");
+
+//         td.innerText = "im a <td>";
+       
+       
+//         tr.appendChild(td);
+//         table.appendChild(tr);    
+//     }
+//              function add_a_col(){
+
+// var table = document.getElementById("tableTest");
+//    var rows = table.rows;
+//    console.log("rows", rows);
+
+//    for (var i = 0; i < rows.length; ++i) {                
+//      var td = document.createElement("td");
+//        td.innerText = i;
+//        rows[i].appendChild(td);    
+//    }   
+
+
+// }
+
+    
+
+    //         //  ten=" ";
+    //         //  for(let y in RR){
+    //         //     document.getElementById("demo12").innerHTML=ten;
+    //         //  }
+      function validate3(){
+              var RR=document.getElementById("card").value
+             var RR1=document.getElementById("card1").value
+             var RR2=document.getElementById("card2").value
+             var RR3=document.getElementById("card3").value
+            
+    // // //          //  get the html table
+    // // //         // 0=the first table
+    // // //         // 1=second table(this value print the second table so use [1])
+            var table=document.getElementsByTagName("table")[0];
+
+    // // //         // add new empty row to the table
+    // // //         // if add (0)=given value is display in top of the table hedding
+    // // //         // if add (1)=given value is display in bottom of the table hedding
+            var newRow=table.insertRow(4);
+           
+    // // //         // add cells to the row
+    // // //         // (0),(1),(2),(3) these are position or index of table row
+            var cel1=newRow.insertCell(0);
+            // var cel2=newRow.insertCell(1);
+            // var cel3=newRow.insertCell(2);
+            //    var cel4=newRow.insertCell(3);
+            
+            
+
+    // //         // add values to the cells
+            cel1.innerHTML=RR +"<br>"+RR1+"<br>"+RR2+"<br>"+RR3
+          
+                
+            // cel2.innerHTML=RR;
+            // cel2.innerHTML=RR1;
+            // cel2.innerHTML=RR2;
+            // cel2.innerHTML=RR3;
+
+
+            }
+
+    //  function validate4(){
+    //            let  x2=document.getElementById("dem").value
+    //            let hi=x2.split(" ").join("").toLowerCase()
+    //            del=cel1.innerHTML
+    //            if(hi===del){
+    //             document.getElementById("error").innerHTML=cel1;
+    //            }
+    //     }
+    </script>
+</body>
+</html>
